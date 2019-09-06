@@ -6,6 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <EditText
+        android:id="@+id/name_edittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_left"
+        android:layout_marginLeft="@dimen/margin_left"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="@dimen/margin_right"
+        android:layout_marginRight="@dimen/margin_right"
+        android:hint="@string/name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
@@ -16,7 +31,7 @@
         android:text="@string/toppings"
         android:textAllCaps="true"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/name_edittext" />
 
     <CheckBox
         android:id="@+id/whipped_cream_checkbox"
@@ -86,29 +101,6 @@
         app:layout_constraintStart_toEndOf="@+id/quantity_textview"
         app:layout_constraintTop_toTopOf="@+id/quantity_textview" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_left"
-        android:layout_marginLeft="@dimen/margin_left"
-        android:layout_marginTop="16dp"
-        android:text="@string/price"
-        android:textAllCaps="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/increment_button" />
-
-    <TextView
-        android:id="@+id/price_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_left"
-        android:layout_marginLeft="@dimen/margin_left"
-        android:layout_marginTop="8dp"
-        android:text="$10"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -118,6 +110,6 @@
         android:onClick="order"
         android:text="@string/order"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/price_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/increment_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
