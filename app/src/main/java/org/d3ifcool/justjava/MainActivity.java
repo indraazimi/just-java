@@ -4,11 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private int mQuantity = 2;
+    private CheckBox mCreamCheckBox;
+    private CheckBox mChocoCheckBox;
     private TextView mQuantityTextView;
     private TextView mPriceTextView;
 
@@ -17,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mCreamCheckBox = findViewById(R.id.whipped_cream_checkbox);
+        mChocoCheckBox = findViewById(R.id.chocolate_checkbox);
         mQuantityTextView = findViewById(R.id.quantity_textview);
         mPriceTextView = findViewById(R.id.price_textview);
     }
@@ -34,7 +39,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void order(View view) {
-        int price = mQuantity * 5;
+        int basePrice = 5;
+        if (mCreamCheckBox.isChecked()) basePrice += 1;
+        if (mChocoCheckBox.isChecked()) basePrice += 2;
+
+        int price = mQuantity * basePrice;
         mPriceTextView.setText("$" + price);
     }
 }
