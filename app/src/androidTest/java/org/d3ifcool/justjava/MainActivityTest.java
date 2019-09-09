@@ -26,4 +26,10 @@ public class MainActivityTest {
         onView(withId(R.id.quantity_textview)).check(matches(withText("3")));
     }
 
+    @Test
+    public void decrementButtonClicked_QuantityChanged() {
+        onView(withId(R.id.decrement_button)).perform(click());
+        onView(withId(R.id.quantity_textview)).check(matches(withText("1")));
+    }
+
 }
